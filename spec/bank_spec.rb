@@ -13,7 +13,10 @@ describe Account do
   it 'responds to withdraw method which takes 1 argument' do
     expect(subject).to respond_to(:withdraw).with(1).argument
   end
-    
+  it 'responds to overdraft'do
+    expect(subject).to respond_to(:overdraft)
+  end
+
     describe '#initialize' do
       it 'sets a default balance of zero' do
         expect(subject.balance).to eq (0)
@@ -21,6 +24,9 @@ describe Account do
       it 'sets a balance of 100' do
         account = Account.new(100)
         expect(account.balance).to eq (100)
+      end
+      it 'sets a default overdraft of -100' do
+        expect(subject.overdraft).to eq (-100)
       end
     end
 
@@ -47,4 +53,6 @@ describe Account do
         expect(account.balance).to eq (15000)
       end
     end
+
+
 end
