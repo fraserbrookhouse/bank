@@ -18,8 +18,18 @@ describe Account do
         account = Account.new(100)
         expect(account.balance).to eq (100)
       end
-    end 
-    describe '#balance' do
-      
+    end
+
+    describe '#deposit' do
+      it 'adds amount to existing balance' do
+        subject.deposit(1000)
+        expect(subject.balance).to eq (1000)
+      end
+
+      it 'adds amount to existing balance' do
+        account = Account.new(1500)
+        account.deposit(1500)
+        expect(account.balance).to eq (3000)
+      end
     end
 end

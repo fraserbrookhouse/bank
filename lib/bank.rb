@@ -5,6 +5,7 @@ class Account
   end
 
   def deposit(amount)
-
+    @balance += amount
+    puts "Your new balance is #{@balance}"
   end
 end
