@@ -10,4 +10,8 @@ describe Account do
   it 'returns a variable called balance' do
     expect(subject.balance).to eq (3)
   end
+
+  it 'responds to deposit method which takes 1 argument' do
+    expect(subject).to respond_to(:deposit).with(1).argument
+  end
 end
