@@ -8,4 +8,8 @@ class Account
     @balance += amount
     puts "Your new balance is #{@balance}"
   end
+  def withdraw(amount)
+    @balance -= amount
+    puts "Your new balance is #{@balance}"
+  end
 end
