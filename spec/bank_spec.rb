@@ -52,6 +52,9 @@ describe Account do
         account.withdraw(5000)
         expect(account.balance).to eq (15000)
       end
+      it 'gives error amount requested would exceed overdraft' do
+        expect { subject.withdraw(150) }.to raise_error 'Amount requested would exceed overdraft'
+      end
     end
 
 

@@ -12,6 +12,8 @@ class Account
     puts "Your new balance is #{@balance}"
   end
   def withdraw(amount)
+    p @balance - amount < @overdraft
+    fail 'Amount requested would exceed overdraft' if @balance - amount < @overdraft
     @balance -= amount
     puts "Your new balance is #{@balance}"
   end
